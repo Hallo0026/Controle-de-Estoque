@@ -7,7 +7,7 @@ use Illuminate\Database\Seeder;
 use App\Models\Role;
 
 
-class RoleSeeder extends Seeder
+class RolesSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,6 +15,7 @@ class RoleSeeder extends Seeder
     public function run(): void
     {
         $roles = [
+
             ['role' => 'admin', 'create_permission' => '1', 'read_permission' => '1', 'update_permission' => '1', 'delete_permission' => '1', 'restricted_pages_access' => '1'],
 
             ['role' => 'diretor', 'create_permission' => '1', 'read_permission' => '1', 'update_permission' => '1', 'delete_permission' => '1', 'restricted_pages_access' => '1'],
@@ -26,6 +27,8 @@ class RoleSeeder extends Seeder
             ['role' => 'supervisor', 'create_permission' => '1', 'read_permission' => '1', 'update_permission' => '0', 'delete_permission' => '0', 'restricted_pages_access' => '0'],
 
             ['role' => 'auxiliar', 'create_permission' => '0', 'read_permission' => '1', 'update_permission' => '0', 'delete_permission' => '0', 'restricted_pages_access' => '0'],
+
+            ['id' => 1000, 'role' => 'novo', 'create_permission' => '0', 'read_permission' => '0', 'update_permission' => '0', 'delete_permission' => '0', 'restricted_pages_access' => '0'],
         ];
 
         foreach ($roles as $role) {
