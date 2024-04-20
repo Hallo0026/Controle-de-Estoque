@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string('barcode')->unique();
             $table->string('name');
+            $table->string('barcode')->unique();
             $table->text('description');
             $table->decimal('price', 10, 2);
             $table->datetime('expiration_date');
@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('image');
             $table->foreignId('category_id')->constrained('categories');
             $table->foreignId('brand_id')->constrained('brands');
-            $table->foreignId('user_id')->constrained('users');
+            $table->string('created_by');
             $table->foreignId('distributor_id')->constrained('distributors');
             $table->timestamps();
         });
