@@ -13,6 +13,10 @@
     <link rel="dns-prefetch" href="//fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
+    <!-- Styles -->
+    <link href="{{ asset('css/header.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
@@ -23,6 +27,75 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
+
+                @auth
+
+                    <a class="btn titulo-header btn-outline-secondary" href="{{ route('home') }}" style="width: 100px;">
+                        Início
+                    </a>
+
+                    <div class="dropdown titulo-header">
+                        <a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Produtos
+                        </a>
+
+                        <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Novo</a></li>
+                        <li><a class="dropdown-item" href="#">Pesquisar</a></li>
+                        </ul>
+                    </div>
+
+
+                    <div class="dropdown titulo-header">
+                        <a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Marcas
+                        </a>
+
+                        <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Novo</a></li>
+                        <li><a class="dropdown-item" href="#">Pesquisar</a></li>
+                        </ul>
+                    </div>
+
+
+                    <div class="dropdown titulo-header">
+                        <a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Fornecedores
+                        </a>
+
+                        <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="{{ route('distributors.create') }}">Novo</a></li>
+                        <li><a class="dropdown-item" href="#">Pesquisar</a></li>
+                        </ul>
+                    </div>
+
+
+                    <div class="dropdown titulo-header">
+                        <a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Entradas
+                        </a>
+
+                        <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Novo</a></li>
+                        <li><a class="dropdown-item" href="#">Pesquisar</a></li>
+                        </ul>
+                    </div>
+
+
+                    <div class="dropdown titulo-header">
+                        <a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Saídas
+                        </a>
+
+                        <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Novo</a></li>
+                        <li><a class="dropdown-item" href="#">Pesquisar</a></li>
+                        </ul>
+                    </div>
+
+                @endauth
+
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
