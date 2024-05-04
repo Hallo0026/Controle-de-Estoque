@@ -16,7 +16,10 @@ import { createApp } from 'vue';
 const app = createApp({});
 
 import ExampleComponent from './components/ExampleComponent.vue';
+import HeaderComponent from './components/partials/HeaderComponent.vue';
+
 app.component('example-component', ExampleComponent);
+app.component('header-component', HeaderComponent);
 
 
 import CardComponent from './components/CardComponent.vue';
