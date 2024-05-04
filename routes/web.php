@@ -28,4 +28,8 @@ Route::group(['middleware' => 'auth'], function () {
         return view('distributors.create');
     })->name('distributors.create');
 
+    Route::get('/distributors/update', function() {
+        return view('distributors.update');
+    })->name('distributors.update');
+
 });
