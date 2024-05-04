@@ -21,6 +21,10 @@ import HeaderComponent from './components/partials/HeaderComponent.vue';
 app.component('example-component', ExampleComponent);
 app.component('header-component', HeaderComponent);
 
+
+import CardComponent from './components/CardComponent.vue';
+app.component('card-component', CardComponent);
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue

@@ -1,0 +1,9 @@
+.titulo-header {
+    margin-right: 10px;
+}
+
+@media(max-width: 768px) {
+    .titulo-header {
+        display: none;
+    }
+}
