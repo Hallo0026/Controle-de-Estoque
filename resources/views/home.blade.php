@@ -15,6 +15,9 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+
+                    <header-component></header-component>
+
                 </div>
             </div>
         </div>
