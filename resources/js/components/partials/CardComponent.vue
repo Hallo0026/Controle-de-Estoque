@@ -1,13 +1,21 @@
 <template>
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-10">
                 <div class="card">
-                    <div class="card-header">Example Component</div>
+
+                    <div class="card-header">{{ title }}</div>
+
 
                     <div class="card-body">
-                        I'm an example component.
+                        <slot name="body"></slot>
                     </div>
+
+
+                    <div class="card-footer">
+                        <slot name="footer"></slot>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -16,8 +24,6 @@
 
 <script>
     export default {
-        mounted() {
-            console.log('Component mounted.')
-        }
+        props: ['title']
     }
 </script>

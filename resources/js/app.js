@@ -5,25 +5,21 @@
  */
 
 import './bootstrap';
+import VueTheMask from 'vue-the-mask'
 import { createApp } from 'vue';
 
-/**
- * Next, we will create a fresh Vue application instance. You may then begin
- * registering components with the application instance so they are ready
- * to use in your application's views. An example is included for you.
- */
 
 const app = createApp({});
 
-import ExampleComponent from './components/ExampleComponent.vue';
-import HeaderComponent from './components/partials/HeaderComponent.vue';
+import CardComponent from './components/partials/CardComponent.vue';
+import DistributorComponent from './components/distributors/DistributorComponent.vue';
+import DistributorCreateComponent from './components/distributors/DistributorCreateComponent.vue';
+import TableComponent from './components/partials/TableComponent.vue';
 
-app.component('example-component', ExampleComponent);
-app.component('header-component', HeaderComponent);
-
-
-import CardComponent from './components/CardComponent.vue';
 app.component('card-component', CardComponent);
+app.component('distributor-component', DistributorComponent);
+app.component('distributor-create-component', DistributorCreateComponent);
+app.component('table-component', TableComponent);
 
 /**
  * The following block of code may be used to automatically register your
@@ -42,5 +38,5 @@ app.component('card-component', CardComponent);
  * an "id" attribute of "app". This element is included with the "auth"
  * scaffolding. Otherwise, you will need to add an element yourself.
  */
-
+app.use(VueTheMask);
 app.mount('#app');

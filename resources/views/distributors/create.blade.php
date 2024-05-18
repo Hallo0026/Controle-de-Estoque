@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-    <card-component titulo="Cadastrar Fornecedor"></card-component>
+    <distributor-create-component></distributor-create-component>
 @endsection

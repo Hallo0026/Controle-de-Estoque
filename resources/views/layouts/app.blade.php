@@ -58,17 +58,9 @@
                     </div>
 
 
-                    <div class="dropdown titulo-header">
-                        <a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="btn titulo-header btn-outline-secondary" href="{{ route('distributors.index') }}">
                         Fornecedores
-                        </a>
-
-                        <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="{{ route('distributors.create') }}">Novo</a></li>
-                        <li><a class="dropdown-item" href="#">Pesquisar</a></li>
-                        </ul>
-                    </div>
-
+                    </a>
 
                     <div class="dropdown titulo-header">
                         <a class="btn btn-outline-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

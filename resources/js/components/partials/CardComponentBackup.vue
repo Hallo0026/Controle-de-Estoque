@@ -4,7 +4,7 @@
             <div class="col-md-8">
                 <div class="card">
 
-                    <div class="card-header">{{ titulo }}</div>
+                    <div class="card-header">{{ title }}</div>
 
 
                     <div class="card-body">
@@ -99,6 +99,6 @@
 
 <script>
     export default {
-        props: ['titulo']
+        props: ['title']
     }
 </script>

@@ -21,7 +21,7 @@ class DistributorController extends Controller
      */
     public function index()
     {
-        return $this->distributor->all();
+        return $this->distributor->all()->where('active', 1);
     }
 
 
@@ -33,7 +33,7 @@ class DistributorController extends Controller
         $request->validate($this->distributor->rules(), $this->distributor->feedback());
         return $this->distributor->create($request->all());
     }
-    
+
 
     /**
      * Display the specified resource.
@@ -48,6 +48,7 @@ class DistributorController extends Controller
         return response()->json($distributor, 200);
     }
 
+
     /**
      * Update the specified resource in storage.
      */
@@ -59,6 +60,7 @@ class DistributorController extends Controller
         return response()->json($distributor, 201);
     }
 
+
     /**
      * Remove the specified resource from storage.
      */
@@ -68,4 +70,28 @@ class DistributorController extends Controller
         $distributor->delete();
         return response()->json(null, 204);
     }
+
+
+    /**
+     * Activate the specified resource from storage.
+     */
+
+    public function activate(int $id) {
+        $distributor = $this->distributor->find($id);
+        $distributor->active = 1;
+        $distributor->save();
+        return response()->json($distributor, 201);
+    }
+
+
+    /**
+     * Deactivate the specified resource from storage.
+     */
+    public function deactivate(int $id) {
+        $distributor = $this->distributor->find($id);
+        $distributor->active = 0;
+        $distributor->save();
+        return response()->json($distributor, 201);
+    }
+
 }

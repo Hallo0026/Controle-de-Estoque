@@ -17,11 +17,12 @@ return new class extends Migration
             $table->string('email');
             $table->string('phone');
             $table->string('address');
+            $table->integer('address_number');
             $table->string('city');
             $table->string('state');
             $table->string('country');
             $table->string('postal_code');
-            $table->string('status')->default('active');
+            $table->integer('active')->default('1');
             $table->timestamps();
         });
     }

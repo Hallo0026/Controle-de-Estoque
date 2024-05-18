@@ -23,4 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::apiResource('products', ProductController::class);
 Route::apiResource('brands', BrandController::class);
+
 Route::apiResource('distributors', DistributorController::class);
+Route::post('distributors/{id}/activate', [DistributorController::class, 'activate']);
+Route::post('distributors/{id}/deactivate', [DistributorController::class, 'deactivate']);

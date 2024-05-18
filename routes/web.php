@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +23,10 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::group(['middleware' => 'auth'], function () {
+
+    Route::get('/distributors/index', function() {
+        return view('distributors.index');
+    })->name('distributors.index');
 
     Route::get('/distributors/create', function() {
         return view('distributors.create');
