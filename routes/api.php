@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\DistributorController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,9 +22,22 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::apiResource('products', ProductController::class);
-Route::apiResource('brands', BrandController::class);
+Route::prefix('v1')->group(function() {
 
-Route::apiResource('distributors', DistributorController::class);
-Route::post('distributors/{id}/activate', [DistributorController::class, 'activate']);
-Route::post('distributors/{id}/deactivate', [DistributorController::class, 'deactivate']);
+    Route::post('/login', [AuthController::class, 'login']);
+
+});
+
+// Rotas protegidas
+Route::prefix('v1')->middleware('auth:sanctum')->group(function() {
+
+    Route::post('/logout', [AuthController::class, 'logout']);
+
+    Route::apiResource('products', ProductController::class);
+    Route::apiResource('brands', BrandController::class);
+
+    Route::apiResource('distributors', DistributorController::class);
+    Route::post('distributors/{id}/activate', [DistributorController::class, 'activate']);
+    Route::post('distributors/{id}/deactivate', [DistributorController::class, 'deactivate']);
+
+});

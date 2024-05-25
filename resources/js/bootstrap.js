@@ -11,6 +11,19 @@ window.axios = axios;
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
+// Interceptar requests da aplicação
+/*
+axios.interceptors.request.use(
+    config => {
+
+        const token = localStorage.getItem('token');
+
+        if(token) {
+            config.headers.Authorization = `Bearer ${token}`;
+        }
+    }
+);*/
+
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
  * for events that are broadcast by Laravel. Echo and event broadcasting

@@ -11,11 +11,13 @@ import { createApp } from 'vue';
 
 const app = createApp({});
 
+import LoginComponent from './components/Login.vue';
 import CardComponent from './components/partials/CardComponent.vue';
 import DistributorComponent from './components/distributors/DistributorComponent.vue';
 import DistributorCreateComponent from './components/distributors/DistributorCreateComponent.vue';
 import TableComponent from './components/partials/TableComponent.vue';
 
+app.component('login-component', LoginComponent);
 app.component('card-component', CardComponent);
 app.component('distributor-component', DistributorComponent);
 app.component('distributor-create-component', DistributorCreateComponent);

@@ -21,10 +21,19 @@
                     <input type="text" class="form-control" id="phone" v-model="phone" v-mask="'(##) #####-####'" aria-describedby="telefoneHelp">
                 </div>
 
-                <div class="mb-3 col">
-                    <label for="endereco" class="form-label">Endereço</label>
-                    <input type="text" class="form-control" id="address" v-model="address" aria-describedby="enderecoHelp">
+                <div class="row">
+                    <div class="mb-3 col">
+                        <label for="endereco" class="form-label">Endereço</label>
+                        <input type="text" class="form-control" id="address" v-model="address" aria-describedby="enderecoHelp">
+                    </div>
+
+                    <div class="mb-3 col">
+                        <label for="address_number" class="form-label">Número</label>
+                        <input type="text" class="form-control" id="address_number" v-model="address_number" aria-describedby="numeroEnderecoHelp">
+                    </div>
                 </div>
+
+
 
                 <div class="mb-3 col">
                     <label for="cidade" class="form-label">Cidade</label>
@@ -103,9 +112,10 @@
                 email: '',
                 phone: '',
                 address: '',
+                address_number: '',
                 city: '',
                 state: '',
-                country: '',
+                country: 'Brasil',
                 postal_code: '',
                 success: false,
                 error: '',
@@ -116,11 +126,12 @@
         methods: {
             cadastrar() {
 
-                axios.post('/api/distributors', {
+                axios.post('/api/v1/distributors', {
                     name: this.name,
                     email: this.email,
                     phone: this.phone,
                     address: this.address,
+                    address_number: this.address_number,
                     city: this.city,
                     state: this.state,
                     country: this.country,

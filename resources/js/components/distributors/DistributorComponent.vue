@@ -38,6 +38,7 @@
     export default {
         mounted() {
             this.getDistributors();
+            console.log(localStorage.getItem('access_token'));
         },
         data() {
             return {
@@ -46,7 +47,11 @@
         },
         methods: {
             getDistributors() {
-            axios.get('/api/distributors')
+            axios.get('/api/v1/distributors', {
+                headers: {
+                    'Authorization': 'Bearer ' + localStorage.getItem('access_token'),
+                }
+            })
                 .then(response => {
                 this.distributors = response.data;
                 })
